@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+//Caesar is a tool used for enciphering messages
+
+int main(int argc, string argv[])
+
+{
+int key;//declares that the variable key will be an integer
+
+
+   if (argc != 2)//sets up condition if the scenario exists, an error message will run
+    {
+     printf("Usage: ./caesar key \n");
+        return 1;
+    }
+    {
+   for(int l = 0, n = strlen(argv[1]); l < n; l++)//for loop checking each char in the string
+    if (!isdigit(argv[1][l]))
+        {
+        printf("Usage: ./caesar key \n");
+        return 1; 
+        }
+    }
+    key = (atoi(argv[1]));//converts string given to an int
+    
+   {
+    string plaintext = get_string("Plaintext: ");//asks for plaintext, asks for cipher text
+    printf("Ciphertext: ");
+
+    {
+        for (int p = 0, m = strlen(plaintext); p < m; p++)
+
+        if (isalpha(plaintext[p]))
+        {
+            if(isupper(plaintext[p]))
+        {
+            printf("%c",(((plaintext[p] - 65) + key) % 26) + 65 );
+        }
+            else
+            {
+                printf("%c", (((plaintext[p] - 97) + key) % 26) + 97);
+            }
+        }
+
+        else
+        {
+            printf("%c", plaintext[p]);
+        }
+
+    }
+    printf("\n");
+
+   }
+}
