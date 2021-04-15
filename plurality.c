@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//Plurality is way of running an election process and yielding the appropriate winner
+
 // Max number of candidates
 #define MAX 9
 
