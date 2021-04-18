@@ -1,0 +1,32 @@
+    #include <stdio.h>
+
+void swap(int *ap, int *bp)
+{
+    int temp = *ap;
+    *ap = *bp;
+    *bp = temp;
+}
+
+int main(void)
+{
+    int arr[] = {34, 3, 1, 55, 2, 90, 34};
+    int n = sizeof(arr)/sizeof(arr[0]); //size of array and how many bites it will occupy
+
+    int m, j;
+    int temp;
+    for (m = 0; m < n-1; m++)
+        {
+            for (j = 0; j < n-m-1; j++)
+                if(arr[j] > arr[j+1])
+                {
+                    swap(&arr[j], &arr[j+1]);
+                }
+        }
+
+    printf("Your array is as follows: \n");
+    for (int i = 0; i < n; i++ )
+        {
+            printf("%d \n", arr[i]);
+        }
+}
+
