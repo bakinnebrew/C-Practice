@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+#include <math.h>
+
+int main(void)
+{
+  
+    int ccount = 0; //counts number of chars
+    int wcount = 0; //counts number of words
+    int scount = 0; //counts number of sentences
+    int ecount = 0; //counts numbers and special characters
+    float avgL = 0;
+    float avgS = 0;
+    
+    string word = get_string("Text: ");
+    {
+    for (int l = 0; l < strlen(word); l++)
+        if ((word[l] >= 'a' && word[l]<= 'z')||(word[l]>= 'A' && word[l]<= 'Z'))
+              {
+         ccount++;
+               }
+        else if (word[l] >= '0' && word[l]<= '9')
+             {
+         ecount++;
+              }
+        else
+             {
+         ecount++;
+             }
+     }
+    
+        {
+    for (int w = 0; w < strlen(word); w++)
+        if (word[w] == ' ' || word[w] == '.' || word[w] == '?' || word[w] =='!' || word[w] == '\0')
+         wcount++;
+        }
+    
+        {
+    for (int s = 0; s < strlen(word); s++ )
+        if(word[s] == '.' || word[s] == '?' || word[s] == '!') 
+        scount++;
+         }
+        
+    avgL = ((100*ccount)/wcount);
+    avgS = ((100*scount)/wcount);
+    float Grade_Level = ((0.0588 * avgL) - (0.296 * avgS) - 15.8);
+    printf("%i \n",ccount);
+    printf("%i \n",scount);
+    printf("%i \n",wcount);
+    printf("%f \n",avgL);
+    printf("%f \n",avgS);
+    printf("%f \n",Grade_Level);
+    if (Grade_Level < 1)
+         {
+        printf("Grade Level: Before Grade 1 \n");
+         }
+    else if(Grade_Level > 16)
+         {
+        printf("Grade Level: 16+");
+        printf("\n");
+        }
+    else
+         {
+    printf("Grade Level: %.f \n", round(Grade_Level));
+         }
+}
