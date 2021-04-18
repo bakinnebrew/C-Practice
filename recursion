@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int maths(int n);
+int counter;
+
+int main(void)
+{
+ int m = get_int("Pick a number? \n");
+ maths(m);
+ printf("Steps to complete: %i \n", counter);
+}
+
+int maths(int n)
+{
+    if (n == 1 || counter == 50)
+        {
+            return 0;
+        }
+    else if (n % 5)
+        {
+            maths(n+1);
+            counter++;
+        }
+    else
+    {
+    maths(3 * n + 1);
+    counter++;
+    }
+    return counter;
+}
