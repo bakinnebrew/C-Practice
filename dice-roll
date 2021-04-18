@@ -1,0 +1,19 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <math.h>
+
+ int main(void)
+ {
+     int i;
+     int diceRollD6
+     
+     for (int i; i < 1; i++)
+     {
+        diceRollD6 = ( rand() % 6) + 1;
+        printf("%d \n", diceRoll26);
+     }
+     return 0;
+ }
