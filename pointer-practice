@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int m = 200;
+    int n = 100;
+    int o = 9;
+    int* p;
+    p = &m;
+
+
+    printf("the address of m is %p \n", &m);
+    printf("the value at address m is %d\n", *(&m));
+    printf("the address of m is %p \n", p);
+    printf("the value at address of m is %d", *p);
+}
