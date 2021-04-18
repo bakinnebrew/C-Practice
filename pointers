@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int max(int* a, int* b);
+int main(void)
+{
+  int* p;
+  int* q;
+  int a = 10;
+  int b = 20;
+  int biggest;
+
+  p = &a;
+  q = &b;
+  int z = *p + *q;
+
+  printf("The sum of the 2 pointers is %d \n", z);
+  biggest = max(p, q);
+  printf("The biggest number is %d \n", biggest);
+}
+
+int max(int* a, int *b)
+{
+    if(*a > *b)
+        return *a;
+    else
+        return *b;
+}
