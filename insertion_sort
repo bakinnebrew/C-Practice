@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void swap(int *ap, int *bp)
+{
+    int temp = *ap;
+    *ap = *bp;
+    *bp = temp;
+}
+int main(void)
+{
+    int arr[] = {34, 2, 1, 18, 20, 55, 29, 354, 22, 11, 5, 8 ,9, 10};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int j;
+    for(int i = 0; i < n; i++)
+    
+        for(j = i+1; j < n; j++)
+        {
+            while(arr[j] < arr[i])
+                {
+                    swap(&arr[i], &arr[j]);   
+                }
+        }
+    
+    for(int m = 0; m < n; m++)
+    {
+        printf("%d, ",arr[m]);
+    }
+
+}
+
+
+//if i + 1 is less than i, do a while loop that comparesit with previous spots, swapping each time. 
